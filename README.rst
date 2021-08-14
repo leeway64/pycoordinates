@@ -1,12 +1,25 @@
 pycoordinates
 =============
 
-pycoordinates is a Python package that can find information on a location, based on a user-
-specified latitude and longitude.
+pycoordinates is a Python package that tells you the location of the given coordinates, or gives
+the coordinates to a given location.
 
 Installation
 ------------
 
 Using pip:
 
-`pip install https://github.com/leeway64/pycoordinates.git#egg=pycoordinates`
+``pip install https://github.com/leeway64/pycoordinates.git#egg=pycoordinates``
+
+
+Functionality
+-------------
+
+coordinates
+-----------
+
+location
+---------
+
+cardinal
+--------
