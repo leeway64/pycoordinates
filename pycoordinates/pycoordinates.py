@@ -7,14 +7,29 @@ app = Nominatim(user_agent="tutorial")
 
 def get_location(latitude, longitude):
     coordinates = f"{latitude}, {longitude}"
+    location_info = app.reverse(coordinates).raw
+    
+    print(f'Country: {location_info["country"]}')
+
+    if location_info['country'] == 'United States':
+        print(f'State: {location_info["state"]}')
+    
+    print(f'City: {location_info["city"]}')
+
     # Nominatim only allows 1 request per second
     time.sleep(1)
-    location = app.reverse(coordinates).raw
-    
 
 
 def get_coordinates(location):
-    pass
+    location_info = app.geocode(location).raw
+    latitude = float(location_info["lat"])
+    longitude = float(location_info["lon"])
+    print(f'Location: {location}')
+    print(f'Latitude: {latitude:.2f}')
+    print(f'Longitude: {longitude:.2f}')
+
+    # Nominatim only allows 1 request per second
+    time.sleep(1)
 
 
 def parse_commands():
@@ -26,17 +41,21 @@ def parse_commands():
     parser.add_argument('--location', action='store', nargs=1, help='Name of the location')
     parser.add_argument('--cardinal', action='store_true', help='Allows for cardinal coordinates\
                                                                 to be typed (e.g., 25N, 121E)')
+    parser.add_argument('--verbose', action='store_true')
     parser.add_argument('--version', action='version')
+
 
     arguments = parser.parse_args()
 
     if arguments.coordinates:
-        pass
+        latitude = arguments.coordinates[0]
+        longitude = arguments.coordinates[1]
+        get_location(latitude, longitude)
     elif arguments.coordinates and arguments.cardinal:
         pass
 
     if arguments.location:
-        pass
+        get_coordinates(arguments.location)
     elif arguments.location and arguments.cardinal:
         pass
 
