@@ -2,7 +2,7 @@ import argparse
 import time
 from geopy.geocoders import Nominatim
 
-app = Nominatim(user_agent="tutorial")
+app = Nominatim(user_agent="pycoordinates")
 
 
 def get_location(latitude, longitude, verbose):
@@ -12,22 +12,24 @@ def get_location(latitude, longitude, verbose):
     location = ''
 
     if verbose:
-        print(f'City: {location_info["address"]["city"]}')
+        location = location + f'City: {location_info["address"]["city"]}\n'
         
         if location_info["address"]['country'] == 'United States':
-            print(f'State: {location_info["address"]["state"]}')
+            location = location + f'State: {location_info["address"]["state"]}\n'
         
-        print(f'Country: {location_info["address"]["country"]}')
+        location = location + f'Country: {location_info["address"]["country"]}\n'
     else:
-        print(f'{location_info["address"]["city"]}, ', end='')
+        location = location + f'{location_info["address"]["city"]}, '
         
         if location_info["address"]['country'] == 'United States':
-            print(f'{location_info["address"]["state"]}, ', end='')
+            location = location + f'{location_info["address"]["state"]}'
         
-        print(f'{location_info["address"]["country"]}')
+        location = location + f'{location_info["address"]["country"]}'
 
     # Nominatim only allows 1 request per second
     time.sleep(1)
+
+    return location
 
 
 def get_coordinates(location, verbose):
@@ -38,14 +40,16 @@ def get_coordinates(location, verbose):
     coordinates = ''
 
     if verbose:
-        print(f'Location: {location}')
-        print(f'Latitude: {latitude:.2f}')
-        print(f'Longitude: {longitude:.2f}')
+        coordinates = coordinates + f'Location: {location}\n'
+        coordinates = coordinates + f'Latitude: {latitude:.2f}\n'
+        coordinates = coordinates + f'Longitude: {longitude:.2f}'
     else:
-        print(f'{location}: {latitude:.2f}, {longitude:.2f}')
+        coordinates = f'{location}: {latitude:.2f}, {longitude:.2f}'
 
     # Nominatim only allows 1 request per second
     time.sleep(1)
+
+    return coordinates
 
 
 def parse_commands():
@@ -64,10 +68,10 @@ def parse_commands():
     if arguments.coordinates:
         latitude = arguments.coordinates[0]
         longitude = arguments.coordinates[1]
-        get_location(latitude, longitude, arguments.verbose)
+        print(get_location(latitude, longitude, arguments.verbose))
 
     if arguments.location:
-        get_coordinates(arguments.location, arguments.verbose)
+        print(get_coordinates(arguments.location, arguments.verbose))
 
 if __name__ == '__main__':
     parse_commands()
