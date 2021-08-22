@@ -6,8 +6,19 @@ app = Nominatim(user_agent="pycoordinates")
 
 
 def get_location(latitude, longitude, verbose):
+    '''
+    Takes in a latitude and longitude and returns the commensurate location.
+
+    :param latitude: the latitude (float)
+    :param longitude: the longitude (float)
+    :returns: the city (string) that is found at the given coordinates
+    :raises ValueError: raises a ValueError if latitude and/or longitude is not a coordinates
+    '''
     coordinates = f"{latitude}, {longitude}"
-    location_info = app.reverse(coordinates).raw
+    try:
+        location_info = app.reverse(coordinates).raw
+    except ValueError:
+        return "Invalid coordinates entered"
 
     location = ''
 
@@ -22,7 +33,7 @@ def get_location(latitude, longitude, verbose):
         location = location + f'{location_info["address"]["city"]}, '
         
         if location_info["address"]['country'] == 'United States':
-            location = location + f'{location_info["address"]["state"]}'
+            location = location + f'{location_info["address"]["state"]}, '
         
         location = location + f'{location_info["address"]["country"]}'
 
@@ -33,7 +44,18 @@ def get_location(latitude, longitude, verbose):
 
 
 def get_coordinates(location, verbose):
-    location_info = app.geocode(location).raw
+    '''
+    Takes in a location and returns its coordinates.
+    
+    :param location: the location that you want to find the coordinates of
+    :returns: the coordinates (string) of the given location
+    :raises AttributeError: raises an AttributeError if the given location is not a valid location
+    '''
+    try:
+        location_info = app.geocode(location).raw
+    except AttributeError:
+        return "Invalid location entered"
+
     latitude = float(location_info["lat"])
     longitude = float(location_info["lon"])
     
@@ -53,6 +75,9 @@ def get_coordinates(location, verbose):
 
 
 def parse_commands():
+    '''
+    Command-line interface driver.
+    '''
     parser = argparse.ArgumentParser(prog='pycoordinates', description="Provides information \
                                 on given coordinates and returns coordinates of given location")
     parser.version = 1.0
@@ -71,7 +96,7 @@ def parse_commands():
         print(get_location(latitude, longitude, arguments.verbose))
 
     if arguments.location:
-        print(get_coordinates(arguments.location, arguments.verbose))
+        print(get_coordinates(arguments.location[0], arguments.verbose))
 
 if __name__ == '__main__':
     parse_commands()
