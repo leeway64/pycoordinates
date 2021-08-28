@@ -11,7 +11,7 @@ Installation
 
 Using pip:
 
-``pip install https://github.com/leeway64/pycoordinates.git#egg=pycoordinates``
+``pip install git+https://github.com/leeway64/pycoordinates.git#egg=pycoordinates``
 
 
 
