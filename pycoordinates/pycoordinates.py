@@ -17,7 +17,7 @@ def get_location(latitude, longitude, verbose):
     '''
     coordinates = f"{latitude}, {longitude}"
     try:
-        location_info = app.reverse(coordinates).raw
+        location_info = app.reverse(coordinates, language='en').raw
     except ValueError:
         return "Invalid coordinates entered"
 
@@ -53,7 +53,7 @@ def get_coordinates(location, verbose):
     :raises AttributeError: raises an AttributeError if the given location is not a valid location
     '''
     try:
-        location_info = app.geocode(location).raw
+        location_info = app.geocode(location, language='en').raw
     except AttributeError:
         return "Invalid location entered"
 
