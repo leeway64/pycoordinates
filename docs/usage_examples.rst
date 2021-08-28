@@ -37,7 +37,7 @@ Find coordinates
 
 Input:
 
-``pycoordinates --location "taipei taiwan"``
+``pycoordinates --location "Taipei, Taiwan"``
 
 Output:
 
@@ -55,9 +55,11 @@ Input:
 
 Output:
 
-``City: Seoul
+::
 
-Country: South Korea``
+  City: Seoul
+
+  Country: South Korea
 
 
 Find coordinates (verbose)
@@ -69,8 +71,10 @@ Input:
 
 Output:
 
-``Location: Taipei, Taiwan
+::
 
-Latitude: 25.04
+  Location: Taipei, Taiwan
 
-Longitude: 121.56``
+  Latitude: 25.04
+
+  Longitude: 121.56
