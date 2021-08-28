@@ -38,8 +38,8 @@ terminal of the directory where you installed this package.
     --verbose             Produces a more verbose output
 
 
- Refer to the `usage examples <docs/usage_examples.rst>`_ for more information on how to run
- these commands.
+Refer to the `usage examples <docs/usage_examples.rst>`_ for more information on how to run
+these commands.
 
 References
 -----------

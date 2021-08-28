@@ -1,14 +1,16 @@
 Usage examples
 ===============
 
-**Display help**
+Display help
+---------------
 
 ``pycoordinates --help``
 
 
-**Find location**
+Find location
+---------------
 
-**Example 1**
+**Example 1:**
 
 Input:
 
@@ -19,7 +21,7 @@ Output:
 ``San Diego, California, United States``
 
 
-**Example 2**
+**Example 2:**
 
 Input:
 
@@ -30,7 +32,8 @@ Output:
 ``Seoul, South Korea``
 
 
-**Find coordinates**
+Find coordinates
+------------------
 
 Input:
 
@@ -42,7 +45,8 @@ Output:
 
 
 
-**Find location (verbose)**
+Find location (verbose)
+---------------------------
 
 Input:
 
@@ -56,7 +60,8 @@ Output:
 Country: South Korea``
 
 
-**Find coordinates** (verbose)
+Find coordinates (verbose)
+-----------------------------
 
 Input:
 
