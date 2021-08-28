@@ -6,12 +6,13 @@ app = Nominatim(user_agent="pycoordinates")
 
 
 def get_location(latitude, longitude, verbose):
-    '''
-    Takes in a latitude and longitude and returns the commensurate location.
-
-    :param latitude: the latitude (float)
-    :param longitude: the longitude (float)
-    :returns: the city (string) that is found at the given coordinates
+    '''Takes in a latitude and longitude and returns the commensurate location.
+    :param latitude: the latitude
+    :param longitude: the longitude
+    :type latitude: float
+    :type longitude: float
+    :returns: the city that is found at the given coordinates
+    :rtype: str
     :raises ValueError: raises a ValueError if latitude and/or longitude is not a coordinates
     '''
     coordinates = f"{latitude}, {longitude}"
@@ -44,11 +45,11 @@ def get_location(latitude, longitude, verbose):
 
 
 def get_coordinates(location, verbose):
-    '''
-    Takes in a location and returns its coordinates.
-    
+    '''Takes in a location and returns its coordinates.
     :param location: the location that you want to find the coordinates of
-    :returns: the coordinates (string) of the given location
+    :type location: str
+    :returns: the coordinates of the given location
+    :rtype: str
     :raises AttributeError: raises an AttributeError if the given location is not a valid location
     '''
     try:
@@ -75,17 +76,13 @@ def get_coordinates(location, verbose):
 
 
 def parse_commands():
-    '''
-    Command-line interface driver.
-    '''
+    '''Command-line interface driver.'''
     parser = argparse.ArgumentParser(prog='pycoordinates', description="Provides information \
-                                on given coordinates and returns coordinates of given location")
-    parser.version = 1.0
+                                on given coordinates and returns coordinates of given location.")
 
     parser.add_argument('--coordinates', action='store', nargs=2, help='Latitude and longitude')
     parser.add_argument('--location', action='store', nargs=1, help='Name of the location')
     parser.add_argument('--verbose', action='store_true', help="Produces a more verbose output")
-    parser.add_argument('--version', action='version')
 
 
     arguments = parser.parse_args()

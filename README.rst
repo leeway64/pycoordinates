@@ -12,14 +12,19 @@ Using pip:
 ``pip install https://github.com/leeway64/pycoordinates.git#egg=pycoordinates``
 
 
-Functionality
--------------
+Basic usage
+------------
 
-coordinates
------------
+usage: pycoordinates [-h] [--coordinates COORDINATES COORDINATES]
+                     [--location LOCATION] [--verbose] [--version]
 
-location
----------
+Provides information on given coordinates and returns coordinates of given
+location.
 
-cardinal
---------
+optional arguments:
+  -h, --help            show this help message and exit
+  --coordinates COORDINATES COORDINATES
+                        Latitude and longitude
+  --location LOCATION   Name of the location
+  --verbose             Produces a more verbose output
+  --version             show program's version number and exit
