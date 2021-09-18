@@ -9,7 +9,19 @@ this project follows `semantic versioning <https://semver.org/>`_.
 Unreleased
 -----------
 
-None
+- None
+
+
+
+[1.0.3] - 2021-9-18
+---------------------
+
+Added
+~~~~~~
+
+- Add the MIT License
+
+
 
 [1.0.2] - 2021-9-11
 --------------------
