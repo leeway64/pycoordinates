@@ -12,6 +12,14 @@ Unreleased
 - None
 
 
+[1.0.4] - 2022-3-11
+--------------------
+
+Added
+~~~~~~
+
+- Add licensing information for geopy
+
 
 [1.0.3] - 2021-9-18
 ---------------------
