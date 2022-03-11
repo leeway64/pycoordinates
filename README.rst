@@ -41,8 +41,8 @@ terminal of the directory where you installed this package.
 Refer to the `usage examples <docs/usage_examples.rst>`_ for more information on how to run
 these commands.
 
-References
------------
 
-`geopy <https://pypi.org/project/geopy/>`_ was an incredibly valuable Python package for this
-project; it served as the backbone for the geolocation aspects of it.
+Third Party Software
+---------------------
+
+- `geopy <https://pypi.org/project/geopy/>`_ (MIT License): Python client for online geocoding services.

@@ -6,7 +6,4 @@ __pycache__/
 # Packaging
 *.egg-info/
 
-
-# Microsoft Office files
-*.docx
-~$*.docx
+.idea/
