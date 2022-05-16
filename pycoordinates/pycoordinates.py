@@ -29,7 +29,7 @@ def get_location(latitude, longitude, verbose):
         if location_info["address"]['country'] == 'United States':
             location = location + f'State: {location_info["address"]["state"]}\n'
         
-        location = location + f'Country: {location_info["address"]["country"]}\n'
+        location = location + f'Country: {location_info["address"]["country"]}'
     else:
         location = location + f'{location_info["address"]["city"]}, '
         

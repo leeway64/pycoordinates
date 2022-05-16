@@ -4,7 +4,20 @@ Usage examples
 Display help
 ---------------
 
-``pycoordinates --help``
+.. code-block::
+
+    $ pycoordinates --help
+
+    usage: pycoordinates [-h] [--coordinates COORDINATES COORDINATES] [--location LOCATION] [--verbose]
+
+    Provides information on given coordinates and returns coordinates of given location.
+
+    options:
+      -h, --help            show this help message and exit
+      --coordinates COORDINATES COORDINATES
+                            Latitude and longitude
+      --location LOCATION   Name of the location
+      --verbose             Produces a more verbose output
 
 
 Find location
@@ -12,69 +25,50 @@ Find location
 
 **Example 1:**
 
-Input:
+.. code-block::
 
-``pycoordinates --coordinates 32.72 117.16W``
+    $ pycoordinates --coordinates 32.72 117.16W
 
-Output:
-
-``San Diego, California, United States``
+    San Diego, California, United States
 
 
 **Example 2:**
 
-Input:
+.. code-block::
 
-``pycoordinates --coordinates 37.57 126.98``
+    $ pycoordinates --coordinates 37.57 126.98
 
-Output:
-
-``Seoul, South Korea``
+    Seoul, South Korea
 
 
 Find coordinates
 ------------------
 
-Input:
+.. code-block::
 
-``pycoordinates --location "Taipei, Taiwan"``
+    $ pycoordinates --location "Taipei, Taiwan"
 
-Output:
-
-``Taipei, Taiwan: 25.04, 121.56``
-
+    Taipei, Taiwan: 25.04, 121.56
 
 
 Find location (verbose)
 ---------------------------
 
-Input:
+.. code-block::
 
-``pycoordinates --verbose --coordinates 37.57 126.98``
+    $ pycoordinates --verbose --coordinates 37.57 126.98
 
-
-Output:
-
-::
-
-  City: Seoul
-
-  Country: South Korea
+    City: Seoul
+    Country: South Korea
 
 
 Find coordinates (verbose)
 -----------------------------
 
-Input:
+.. code-block::
 
-``pycoordinates --verbose --location "Taipei, Taiwan"``
+    $ pycoordinates --verbose --location "Taipei, Taiwan"
 
-Output:
-
-::
-
-  Location: Taipei, Taiwan
-
-  Latitude: 25.04
-
-  Longitude: 121.56
+    Location: Taipei, Taiwan
+    Latitude: 25.04
+    Longitude: 121.56

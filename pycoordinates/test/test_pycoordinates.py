@@ -1,5 +1,6 @@
 from pycoordinates.pycoordinates import get_location, get_coordinates
 
+
 class TestSuite:
     def test_get_location(self):
         verbose = False
