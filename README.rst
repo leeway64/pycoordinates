@@ -75,3 +75,4 @@ Third Party Software
 
 - `geopy <https://pypi.org/project/geopy/>`_ (MIT License): Python client for online geocoding services.
 - `pytest <https://docs.pytest.org/en/6.2.x/index.html>`_ (MIT License): Python testing framework.
+- `Travis CI <https://www.travis-ci.com/>`_: Continuous integration and deployment (CI/CD) system.
