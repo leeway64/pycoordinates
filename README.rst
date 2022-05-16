@@ -46,10 +46,26 @@ Tests
 Travis CI will run unit tests automatically with each commit, but if you wish, you may run unit
 tests manually.
 
-To run unit tests, run, in the top-level directory:
+.. code-block::
+
+    git clone https://github.com/leeway64/pycoordinates.git
+    cd pycoordinates
+
+Assuming you are using a Linux machine:
 
 .. code-block::
 
+    python3 -m venv .venv
+    source .venv/bin/activate
+    pip install -r test_requirements.txt
+    pytest --pyargs pycoordinates
+
+If you are using a Windows machine:
+
+.. code-block::
+
+    py -3 -m venv .venv
+    .venv\scripts\activate
     pip install -r test_requirements.txt
     pytest --pyargs pycoordinates
 
