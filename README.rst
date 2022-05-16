@@ -1,6 +1,10 @@
 pycoordinates
 =============
 
+
+.. image:: https://app.travis-ci.com/leeway64/pycoordinates.svg?branch=master
+    :target: https://app.travis-ci.com/leeway64/pycoordinates
+
 .. image:: https://img.shields.io/badge/license-MIT-blue.svg
     :target: LICENSE.txt
 

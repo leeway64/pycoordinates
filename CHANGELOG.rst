@@ -13,18 +13,19 @@ Unreleased
 - None
 
 
-[1.1.0] - 2022-5-
+[1.1.0] - 2022-5-16
 --------------------
 
 Added
 ~~~~~
 
--
+- Add support for Travis CI
+- Create test requirements file
 
 Changed
 ~~~~~~~~
 
--
+- Update README and usage examples
 
 
 [1.0.4] - 2022-3-11
